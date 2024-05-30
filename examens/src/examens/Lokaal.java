@@ -28,29 +28,6 @@ public class Lokaal {
 	 * @creates | result
 	 */
 	public Set<Examen> getExamens() {return Set.copyOf(examens);}
-//	/**
-//	 * @pre | exam != null
-//	 * @pre | !getExamens().contains(this)
-//	 * 
-//	 * @mutates_properties | getExamens(), exam.getLokalen()
-//	 * 
-//	 * @post | getExamens().equals(LogicalSet.plus(old(getExamens()),exam))
-//	 * @post | exam.getLokalen().equals(LogicalSet.plus(old(exam.getLokalen()),this))
-//	 */
-//	void addExamen(Examen exam) {
-//		examens.add(exam);
-//		
-//		
-//	}
-//	/**
-//	 * @pre | exam != null
-//	 * @pre | getExamens().contains(this)
-//	 * 
-//	 * @mutates_properties | getExamens(), exam.getLokalen()
-//	 * 
-//	 * @post | getExamens().equals(LogicalSet.minus(old(getExamens()),exam))
-//	 * @post | exam.getLokalen().equals(LogicalSet.minus(old(exam.getLokalen()),this))
-//	 */
-//	 void deleteExamen(Examen exam) {throw new RuntimeException("nee");}
+
 
 }
