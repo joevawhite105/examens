@@ -12,9 +12,9 @@ public class Examen {
 	 * @peerObjects
 	 * @representationObject
 	 * @invar | lokalen != null
-     * @invar | lokalen.stream().allMatch(l -> l != null && l.examens.contains(this))
+     * @invar | lokalen.stream().allMatch(l -> l != null && l.getExamensInternal().contains(this))
 	 */
-	 Set<Lokaal> lokalen = new HashSet<>();
+	 private Set<Lokaal> lokalen = new HashSet<>();
 	
 	Set<Lokaal> getLokalenInternal(){
 		return Set.copyOf(lokalen);
@@ -38,7 +38,7 @@ public class Examen {
 	 */
 	public void addLokaal(Lokaal lok) {
 		lokalen.add(lok);
-		lok.examens.add(this);
+		lok.addExamen(this);
 	}
 	/**
 	 * @pre | lok != null
@@ -50,7 +50,7 @@ public class Examen {
 	 * @post | lok.getExamens().equals(LogicalSet.minus(old(lok.getExamens()),this))
 	 */
 	public void deleteLokaal(Lokaal lok) {
-		lok.examens.remove(this);
+		lok.deleteExamen(this);
 		lokalen.remove(lok);
 	}
 
